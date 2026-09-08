@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sabor de Barranco: cocina peruana en Providencia, Santiago. Ceviches, anticuchos y clásicos criollos.">
+    <title>Sabor de Barranco | Cocina peruana en Santiago</title>
+    <link rel="icon" type="image/svg+xml" href="img/icono.svg">
+
+    <!-- Tipografias del sitio -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <!-- Encabezado principal de la portada -->
+
+<header>
+
+    <h1>Sabor de Barranco</h1>
+    <p>Cocina peruana en el corazón de Santiago</p>
+
+    <div class="hero-botones">
+        <a href="Pages/menu.html" class="boton boton-principal">Ver la carta</a>
+        <a href="Pages/reservaciones.html" class="boton boton-secundario">Reservar mesa</a>
+    </div>
+
+</header>
+
+    <!-- Barra de navegacion del sitio -->
+
+<nav>
+    <button class="boton-menu" aria-label="Abrir menú" aria-expanded="false">☰</button>
+
+    <a href="index.html">Inicio</a>
+    <a href="Pages/menu.html">Carta</a>
+    <a href="Pages/nosotros.html">Nosotros</a>
+    <a href="Pages/reservaciones.html">Reservas</a>
+    <a href="Pages/contacto.html">Contacto</a>
+
+</nav>
+
+<main>
+
+    <!-- Presentacion breve del restaurante -->
+
+    <section>
+
+        <h2 class="titulo-seccion aparece">Bienvenidos</h2>
+        <p class="subtitulo-seccion aparece">
+            Quince años cocinando los sabores del Perú en Providencia, con
+            pescado fresco de la caleta y ajíes traídos del norte.
+        </p>
+
+        <div class="columnas">
+
+            <div class="aparece">
+                <h3>De la caleta a la mesa</h3>
+                <p>Recibimos pescado fresco cada mañana y lo trabajamos el mismo
+                   día. Si un producto no está en su punto, ese día no sale de
+                   la cocina.</p>
+            </div>
+
+            <div class="aparece">
+                <h3>Recetas de siempre</h3>
+                <p>Nuestras salsas se muelen en batán y los guisos se cocinan a
+                   fuego lento, tal como los aprendió nuestra chef en Lima.</p>
+            </div>
+
+            <div class="aparece">
+                <h3>Barrio y sobremesa</h3>
+                <p>Una casona de Av. Italia con patio, mesas largas y espacio
+                   para quedarse conversando después del postre.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Tres platos destacados: la carta completa vive en Pages/menu.html -->
+
+    <section>
+
+        <h2 class="titulo-seccion aparece">Nuestros Clásicos</h2>
+        <p class="subtitulo-seccion aparece">
+            Los tres platos que nadie se salta en su primera visita.
+        </p>
+
+        <div class="platos">
+
+            <article class="plato aparece">
+                <img class="plato-foto" src="img/platos/ceviche.svg"
+                     alt="Ceviche de pescado fresco con cebolla morada, choclo y camote" loading="lazy">
+                <div class="plato-contenido">
+                    <h3>Ceviche Clásico</h3>
+                    <p>Pescado del día en leche de tigre, cebolla morada, choclo,
+                       camote glaseado y cancha serrana.</p>
+                    <div class="plato-pie">
+                        <span class="precio">$12.900</span>
+                        <span class="etiqueta etiqueta-picante">Picante</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="plato aparece">
+                <img class="plato-foto" src="img/platos/lomo-saltado.svg"
+                     alt="Lomo saltado con papas fritas, tomate y cebolla" loading="lazy">
+                <div class="plato-contenido">
+                    <h3>Lomo Saltado</h3>
+                    <p>Lomo fino salteado al wok con cebolla, tomate y sillao,
+                       acompañado de papas fritas y arroz graneado.</p>
+                    <div class="plato-pie">
+                        <span class="precio">$14.900</span>
+                        <span class="etiqueta">El favorito</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="plato aparece">
+                <img class="plato-foto" src="img/platos/pisco-sour.svg"
+                     alt="Copa de pisco sour con espuma y gotas de amargo" loading="lazy">
+                <div class="plato-contenido">
+                    <h3>Pisco Sour</h3>
+                    <p>Pisco quebranta, limón de Pica, jarabe de goma y clara de
+                       huevo, con unas gotas de amargo de angostura.</p>
+                    <div class="plato-pie">
+                        <span class="precio">$6.900</span>
+                        <span class="etiqueta">Bandera</span>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="centrado aparece">
+            <a href="Pages/menu.html" class="boton boton-principal">Ver la carta completa</a>
+        </div>
+
+    </section>
+
+    <!-- Llamado a reservar -->
+
+    <section>
+
+        <div class="franja aparece">
+            <h2>¿Vienes a comer con nosotros?</h2>
+            <p>Reserva tu mesa con anticipación, sobre todo los fines de semana.</p>
+            <a href="Pages/reservaciones.html" class="boton boton-principal">Reservar una mesa</a>
+        </div>
+
+    </section>
+
+</main>
+
+    <!-- Pie de pagina con informacion de contacto y enlaces del sitio -->
+
+<footer>
+
+    <div>
+        <h3>Quienes Somos</h3>
+        <p>Nacimos en 2010 en una casona de Providencia con una idea simple:
+           traer a Santiago la cocina peruana de siempre, con pescado fresco
+           y productos de pequeños productores.</p>
+        <a href="Pages/nosotros.html">Conoce nuestra historia</a>
+    </div>
+
+    <div>
+        <h3>Enlaces</h3>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="Pages/menu.html">Carta</a></li>
+            <li><a href="Pages/nosotros.html">Quiénes Somos</a></li>
+            <li><a href="Pages/reservaciones.html">Reservaciones</a></li>
+            <li><a href="Pages/contacto.html">Contacto</a></li>
+        </ul>
+    </div>
+
+    <div>
+        <h3>Contacto</h3>
+        <p>Av. Italia 1234<br>
+           Providencia, Santiago</p>
+        <p>Teléfono: <a href="tel:+56223456789">+56 2 2345 6789</a></p>
+        <p>Correo: <a href="mailto:info@sabordebarranco.cl">info@sabordebarranco.cl</a></p>
+    </div>
+
+    <div>
+        <h3>Horario</h3>
+        <ul>
+            <li>Lunes a Jueves: 12:00 - 22:00</li>
+            <li>Viernes y Sábado: 12:00 - 23:30</li>
+            <li>Domingo: 12:00 - 17:00</li>
+        </ul>
+    </div>
+
+    <div>
+        <h3>Síguenos</h3>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">X</a>
+        <a href="#">TripAdvisor</a>
+    </div>
+
+    <!-- Aviso legal y derechos de autor -->
+    <p>&copy; <span id="anio">2026</span> Sabor de Barranco. Todos los derechos reservados.</p>
+    <p>
+        <a href="#">Política de Privacidad</a> |
+        <a href="#">Términos y Condiciones</a>
+    </p>
+
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

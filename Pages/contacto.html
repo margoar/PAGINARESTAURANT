@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dirección, teléfono, horario y formulario de contacto de Sabor de Barranco en Providencia, Santiago.">
+    <title>Contacto | Sabor de Barranco</title>
+    <link rel="icon" type="image/svg+xml" href="../img/icono.svg">
+
+    <!-- Tipografias del sitio -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+
+    <!-- Encabezado de pagina con un titulo y subtitulo -->
+
+<header class="hero-pequeno">
+
+    <h1>Contacto</h1>
+    <p>Estamos en Av. Italia, Providencia</p>
+
+</header>
+
+    <!-- Barra de navegacion del sitio -->
+
+<nav>
+    <button class="boton-menu" aria-label="Abrir menú" aria-expanded="false">☰</button>
+
+    <a href="../index.html">Inicio</a>
+    <a href="menu.html">Carta</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="reservaciones.html">Reservas</a>
+    <a href="contacto.html">Contacto</a>
+
+</nav>
+
+<main>
+
+    <!-- Datos de contacto y como llegar -->
+
+    <section>
+
+        <h2 class="titulo-seccion aparece">Dónde encontrarnos</h2>
+        <p class="subtitulo-seccion aparece">
+            A dos cuadras del metro Santa Isabel, en pleno Barrio Italia.
+        </p>
+
+        <div class="columnas">
+
+            <div class="tarjeta aparece">
+                <h3>Dirección</h3>
+                <p>Av. Italia 1234<br>
+                   Providencia, Santiago</p>
+                <p>Estacionamiento con convenio en Girardi 45.</p>
+            </div>
+
+            <div class="tarjeta aparece">
+                <h3>Teléfono y correo</h3>
+                <p><a href="tel:+56223456789">+56 2 2345 6789</a></p>
+                <p><a href="mailto:info@sabordebarranco.cl">info@sabordebarranco.cl</a></p>
+                <p>Prensa y eventos:<br>
+                   <a href="mailto:eventos@sabordebarranco.cl">eventos@sabordebarranco.cl</a></p>
+            </div>
+
+            <div class="tarjeta aparece">
+                <h3>Horario de atención</h3>
+                <ul class="lista">
+                    <li>Lunes: cerrado</li>
+                    <li>Martes a Jueves: 12:00 - 22:00</li>
+                    <li>Viernes y Sábado: 12:00 - 23:30</li>
+                    <li>Domingo: 12:00 - 17:00</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <figure class="figura mapa aparece">
+            <img src="../img/mapa.svg"
+                 alt="Plano con la ubicación del restaurante en Av. Italia 1234, Providencia" loading="lazy">
+            <figcaption>A dos cuadras del metro Santa Isabel, esquina con Girardi.</figcaption>
+        </figure>
+
+    </section>
+
+    <!-- Formulario de mensajes -->
+
+    <section>
+
+        <h2 class="titulo-seccion aparece">Escríbenos</h2>
+        <p class="subtitulo-seccion aparece">
+            Consultas, sugerencias o cotizaciones para eventos. Respondemos
+            dentro de las 24 horas hábiles.
+        </p>
+
+        <form class="formulario formulario-centrado aparece" id="form-contacto">
+
+            <div class="campo">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" required
+                       placeholder="Tu nombre">
+            </div>
+
+            <div class="campo">
+                <label for="correo">Correo electrónico</label>
+                <input type="email" id="correo" name="correo" required
+                       placeholder="tucorreo@ejemplo.cl">
+            </div>
+
+            <div class="campo">
+                <label for="asunto">Asunto</label>
+                <select id="asunto" name="asunto" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="consulta">Consulta general</option>
+                    <option value="eventos">Eventos privados</option>
+                    <option value="sugerencia">Sugerencia o reclamo</option>
+                    <option value="trabajo">Quiero trabajar con ustedes</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" rows="6" required
+                          placeholder="Cuéntanos en qué podemos ayudarte"></textarea>
+            </div>
+
+            <button type="submit" class="boton boton-principal">Enviar mensaje</button>
+
+            <!-- Aviso de confirmacion que muestra el JS -->
+            <p class="mensaje-form" hidden></p>
+
+        </form>
+
+    </section>
+
+</main>
+
+    <!-- Pie de pagina con informacion de contacto y enlaces del sitio -->
+
+<footer>
+
+    <div>
+        <h3>Quienes Somos</h3>
+        <p>Nacimos en 2010 en una casona de Providencia con una idea simple:
+           traer a Santiago la cocina peruana de siempre, con pescado fresco
+           y productos de pequeños productores.</p>
+        <a href="nosotros.html">Conoce nuestra historia</a>
+    </div>
+
+    <div>
+        <h3>Enlaces</h3>
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="menu.html">Carta</a></li>
+            <li><a href="nosotros.html">Quiénes Somos</a></li>
+            <li><a href="reservaciones.html">Reservaciones</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </div>
+
+    <div>
+        <h3>Contacto</h3>
+        <p>Av. Italia 1234<br>
+           Providencia, Santiago</p>
+        <p>Teléfono: <a href="tel:+56223456789">+56 2 2345 6789</a></p>
+        <p>Correo: <a href="mailto:info@sabordebarranco.cl">info@sabordebarranco.cl</a></p>
+    </div>
+
+    <div>
+        <h3>Horario</h3>
+        <ul>
+            <li>Lunes a Jueves: 12:00 - 22:00</li>
+            <li>Viernes y Sábado: 12:00 - 23:30</li>
+            <li>Domingo: 12:00 - 17:00</li>
+        </ul>
+    </div>
+
+    <div>
+        <h3>Síguenos</h3>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">X</a>
+        <a href="#">TripAdvisor</a>
+    </div>
+
+    <!-- Aviso legal y derechos de autor -->
+    <p>&copy; <span id="anio">2026</span> Sabor de Barranco. Todos los derechos reservados.</p>
+    <p>
+        <a href="#">Política de Privacidad</a> |
+        <a href="#">Términos y Condiciones</a>
+    </p>
+
+</footer>
+
+<script src="../js/script.js"></script>
+
+</body>
+</html>

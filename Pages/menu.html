@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Carta de Sabor de Barranco: entradas, fondos, postres y bebidas de cocina peruana en Santiago.">
+    <title>Carta | Sabor de Barranco</title>
+    <link rel="icon" type="image/svg+xml" href="../img/icono.svg">
+
+    <!-- Tipografias del sitio -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+
+    <!-- Encabezado de pagina con un titulo y subtitulo -->
+
+<header class="hero-pequeno">
+
+    <h1>Nuestra Carta</h1>
+    <p>Entradas, fondos, postres y bebidas</p>
+
+</header>
+
+    <!-- Barra de navegacion del sitio -->
+
+<nav>
+    <button class="boton-menu" aria-label="Abrir menú" aria-expanded="false">☰</button>
+
+    <a href="../index.html">Inicio</a>
+    <a href="menu.html">Carta</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="reservaciones.html">Reservas</a>
+    <a href="contacto.html">Contacto</a>
+
+</nav>
+
+<main>
+
+    <!-- Carta con filtros por categoria (los maneja el archivo js/script.js) -->
+
+    <section id="carta">
+
+        <h2 class="titulo-seccion aparece">Cocina peruana de siempre</h2>
+        <p class="subtitulo-seccion aparece">
+            Preparamos todo al momento con pescado fresco, ajíes del norte del
+            Perú y verduras de la Vega. Los precios están en pesos chilenos e
+            incluyen IVA.
+        </p>
+
+        <div class="filtros aparece">
+            <button class="filtro activo" data-categoria="todos">Todos</button>
+            <button class="filtro" data-categoria="entradas">Entradas</button>
+            <button class="filtro" data-categoria="fondos">Fondos</button>
+            <button class="filtro" data-categoria="postres">Postres</button>
+            <button class="filtro" data-categoria="bebidas">Bebidas</button>
+        </div>
+
+        <div class="platos">
+
+            <article class="plato aparece" data-categoria="entradas">
+                <img class="plato-foto" src="../img/platos/ceviche.svg"
+                     alt="Ceviche de pescado fresco con cebolla morada, choclo y camote" loading="lazy">
+                <div class="plato-contenido">
+                    <h3>Ceviche Clásico</h3>
+                    <p>Pescado del día en leche de tigre, cebolla morada, choclo,
+                       camote glaseado y cancha serrana.</p>
+                    <div class="plato-pie">
+                        <span class="precio">$12.900</span>
+                        <span class="etiqueta etiqueta-picante">Picante</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="plato aparece" data-categoria="entradas">
+                <img class="plato-foto" src="../img/platos/causa.svg"
+                     alt="Causa limeña de papa amarilla con palta y huevo" loading="lazy">
+                <div class="plato-contenido">
+                    <h3>Causa Limeña</h3>
+                    <p>Papa amarilla prensada con ají amarillo y limón, rellena
+                       de pollo o cangrejo, con palta y huevo de codorniz.</p>
+                    <div class="plato-pie">
+                        <span class="precio">$8.900</span>
+                        <span class="etiqueta">Frío</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="plato aparece" data-categoria="entradas">
+                <img class="plato-foto" src="../img/platos/anticuchos.svg"
+                     alt="Anticuchos a la parrilla con papa dorada y salsa de rocoto" loading="lazy">
+                <div class="plato-contenido">
+                    <h3>Anticuchos de Corazón</h3>
+                    <p>Brochetas maceradas en ají panca y vinagre, a la parrilla,
+                       con papa dorada y salsa de rocoto.</p>
+                    <div class="plato-pie">
+                        <span class="precio">$9.900</span>
+                        <span class="etiqueta">A la parrilla</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="plato aparece" data-categoria="fondos">
+                <img class="plato-foto" src="../img/platos/lomo-saltado.svg"
+                     alt="Lomo saltado con papas fritas, tomate y cebolla" loading="lazy">
+                <div class="plato-contenido">
+                    <h3>Lomo Saltado</h3>
+                    <p>Lomo fino salteado al wok con cebolla, tomate y sillao,
+                       acompañado de papas fritas y arroz graneado.</p>
+                    <div class="plato-pie">
+                        <span class="precio">$14.900</span>
+                        <span class="etiqueta">El favorito</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="plato aparece" data-categoria="fondos">
+                <img class="plato-foto" src="../img/platos/aji-de-gallina.svg"
+                     alt="Ají de gallina en crema de ají amarillo con huevo y aceituna" loading="lazy">
+                <div class="plato-contenido">
+                    <h3>Ají de Gallina</h3>
+                    <p>Gallina deshilachada en crema de ají amarillo con nueces
+                       y pan, sobre papa sancochada y arroz blanco.</p>
+                    <div class="plato-pie">
+                        <span class="precio">$12.500</span>
+                        <span class="etiqueta etiqueta-picante">Picante suave</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="plato aparece" data-categoria="fondos">
+                <img class="plato-foto" src="../img/platos/arroz-con-mariscos.svg"
+                     alt="Arroz con mariscos, langostinos y calamar" loading="lazy">
+                <div class="plato-contenido">
+                    <h3>Arroz con Mariscos</h3>
+                    <p>Arroz cremoso con ají panca, langostinos, calamar,
+                       machas y un toque de vino blanco.</p>
+                    <div class="plato-pie">
+                        <span class="precio">$16.900</span>
+                        <span class="etiqueta">Del mar</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="plato aparece" data-categoria="postres">
+                <img class="plato-foto" src="../img/platos/suspiro.svg"
+                     alt="Suspiro a la limeña con merengue y canela" loading="lazy">
+                <div class="plato-contenido">
+                    <h3>Suspiro a la Limeña</h3>
+                    <p>Manjar blanco de leche fresca coronado con merengue
+                       al oporto y canela molida.</p>
+                    <div class="plato-pie">
+                        <span class="precio">$6.500</span>
+                        <span class="etiqueta">Tradicional</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="plato aparece" data-categoria="postres">
+                <img class="plato-foto" src="../img/platos/picarones.svg"
+                     alt="Picarones dorados bañados en miel de chancaca" loading="lazy">
+                <div class="plato-contenido">
+                    <h3>Picarones</h3>
+                    <p>Buñuelos de zapallo y camote fritos al momento, bañados
+                       en miel de chancaca con higo y anís.</p>
+                    <div class="plato-pie">
+                        <span class="precio">$5.900</span>
+                        <span class="etiqueta">Recién hecho</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="plato aparece" data-categoria="bebidas">
+                <img class="plato-foto" src="../img/platos/pisco-sour.svg"
+                     alt="Copa de pisco sour con espuma y gotas de amargo" loading="lazy">
+                <div class="plato-contenido">
+                    <h3>Pisco Sour</h3>
+                    <p>Pisco quebranta, limón de Pica, jarabe de goma y clara de
+                       huevo, con unas gotas de amargo de angostura.</p>
+                    <div class="plato-pie">
+                        <span class="precio">$6.900</span>
+                        <span class="etiqueta">Bandera</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="plato aparece" data-categoria="bebidas">
+                <img class="plato-foto" src="../img/platos/chicha-morada.svg"
+                     alt="Vaso de chicha morada bien fría con rodaja de piña" loading="lazy">
+                <div class="plato-contenido">
+                    <h3>Chicha Morada</h3>
+                    <p>Maíz morado hervido con piña, membrillo, canela y clavo,
+                       servido bien frío. Jarra de un litro.</p>
+                    <div class="plato-pie">
+                        <span class="precio">$5.500</span>
+                        <span class="etiqueta">Sin alcohol</span>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Aviso para quienes tienen restricciones alimentarias -->
+        <p class="nota aparece">
+            ¿Alergias o alguna intolerancia? Avísale a quien te atienda y
+            adaptamos el plato. Tenemos opciones sin gluten y vegetarianas.
+        </p>
+
+    </section>
+
+</main>
+
+    <!-- Pie de pagina con informacion de contacto y enlaces del sitio -->
+
+<footer>
+
+    <div>
+        <h3>Quienes Somos</h3>
+        <p>Nacimos en 2010 en una casona de Providencia con una idea simple:
+           traer a Santiago la cocina peruana de siempre, con pescado fresco
+           y productos de pequeños productores.</p>
+        <a href="nosotros.html">Conoce nuestra historia</a>
+    </div>
+
+    <div>
+        <h3>Enlaces</h3>
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="menu.html">Carta</a></li>
+            <li><a href="nosotros.html">Quiénes Somos</a></li>
+            <li><a href="reservaciones.html">Reservaciones</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </div>
+
+    <div>
+        <h3>Contacto</h3>
+        <p>Av. Italia 1234<br>
+           Providencia, Santiago</p>
+        <p>Teléfono: <a href="tel:+56223456789">+56 2 2345 6789</a></p>
+        <p>Correo: <a href="mailto:info@sabordebarranco.cl">info@sabordebarranco.cl</a></p>
+    </div>
+
+    <div>
+        <h3>Horario</h3>
+        <ul>
+            <li>Lunes a Jueves: 12:00 - 22:00</li>
+            <li>Viernes y Sábado: 12:00 - 23:30</li>
+            <li>Domingo: 12:00 - 17:00</li>
+        </ul>
+    </div>
+
+    <div>
+        <h3>Síguenos</h3>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">X</a>
+        <a href="#">TripAdvisor</a>
+    </div>
+
+    <!-- Aviso legal y derechos de autor -->
+    <p>&copy; <span id="anio">2026</span> Sabor de Barranco. Todos los derechos reservados.</p>
+    <p>
+        <a href="#">Política de Privacidad</a> |
+        <a href="#">Términos y Condiciones</a>
+    </p>
+
+</footer>
+
+<script src="../js/script.js"></script>
+
+</body>
+</html>

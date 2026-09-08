@@ -1,0 +1,942 @@
+/* ==========================================================================
+   Sabor de Barranco - Hoja de estilos principal
+   Cocina peruana. Paleta inspirada en el aji amarillo, la chicha morada
+   y el rojo de la bandera.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Variables de color, tipografia y espaciado
+   -------------------------------------------------------------------------- */
+
+:root {
+    /* Colores de marca */
+    --rojo:         #C1121F;
+    --rojo-oscuro:  #7A0B14;
+    --dorado:       #D4A24C;
+    --aji:          #F0A500;
+    --morado:       #4A1E3D;
+
+    /* Neutros */
+    --crema:        #FBF7F0;
+    --arena:        #EFE6D9;
+    --carbon:       #1E1A17;
+    --gris:         #5B5350;
+    --blanco:       #FFFFFF;
+
+    /* Tipografias */
+    --fuente-titulo: "Playfair Display", Georgia, "Times New Roman", serif;
+    --fuente-texto:  "Inter", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+    /* Medidas */
+    --ancho-max:    1200px;
+    --radio:        10px;
+    --sombra:       0 4px 20px rgba(30, 26, 23, 0.10);
+    --sombra-alta:  0 12px 32px rgba(30, 26, 23, 0.18);
+    --transicion:   0.3s ease;
+}
+
+/* --------------------------------------------------------------------------
+   2. Reset basico
+   -------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Deja espacio para la barra de navegacion fija al saltar a un ancla */
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: var(--fuente-texto);
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--carbon);
+    background-color: var(--crema);
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* --------------------------------------------------------------------------
+   3. Tipografia
+   -------------------------------------------------------------------------- */
+
+h1, h2, h3 {
+    font-family: var(--fuente-titulo);
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); }
+h2 { font-size: clamp(1.9rem, 4vw, 2.6rem); }
+h3 { font-size: 1.25rem; }
+
+/* Titulos de seccion con linea decorativa */
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.titulo-seccion::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 3px;
+    margin: 18px auto 0;
+    background: linear-gradient(90deg, var(--rojo), var(--aji));
+    border-radius: 2px;
+}
+
+.subtitulo-seccion {
+    max-width: 620px;
+    margin: 0 auto 50px;
+    text-align: center;
+    color: var(--gris);
+}
+
+/* --------------------------------------------------------------------------
+   4. Encabezado principal (hero)
+   -------------------------------------------------------------------------- */
+
+header {
+    position: relative;
+    min-height: 78vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 20px 90px;
+    color: var(--blanco);
+    /* Ilustracion de fondo (img/portada.svg) con un velo para el contraste */
+    background:
+        linear-gradient(rgba(30, 26, 23, 0.45), rgba(122, 11, 20, 0.55)),
+        url("../img/portada.svg"),
+        var(--rojo-oscuro);
+    background-size: cover;
+    background-position: center;
+}
+
+header h1 {
+    letter-spacing: 1px;
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+}
+
+header p {
+    margin-top: 16px;
+    font-size: 1.15rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--arena);
+}
+
+/* --------------------------------------------------------------------------
+   5. Barra de navegacion
+   -------------------------------------------------------------------------- */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 20px;
+    background-color: rgba(251, 247, 240, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--arena);
+    transition: box-shadow var(--transicion), padding var(--transicion);
+}
+
+/* Clase que agrega el JS cuando la pagina se desplaza */
+nav.nav-fija {
+    padding: 10px 20px;
+    box-shadow: var(--sombra);
+}
+
+nav a {
+    position: relative;
+    padding: 8px 16px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--carbon);
+    transition: color var(--transicion);
+}
+
+/* Subrayado animado */
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    bottom: 2px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--rojo), var(--aji));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transicion);
+}
+
+nav a:hover,
+nav a.activo {
+    color: var(--rojo);
+}
+
+nav a:hover::after,
+nav a.activo::after {
+    transform: scaleX(1);
+}
+
+/* Boton hamburguesa: solo visible en pantallas pequenas */
+.boton-menu {
+    display: none;
+    background: none;
+    border: 1px solid var(--arena);
+    border-radius: var(--radio);
+    padding: 8px 14px;
+    font-size: 1.4rem;
+    line-height: 1;
+    color: var(--carbon);
+    cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
+   6. Contenido principal y secciones
+   -------------------------------------------------------------------------- */
+
+main {
+    max-width: var(--ancho-max);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 80px 0;
+}
+
+/* --------------------------------------------------------------------------
+   7. Botones
+   -------------------------------------------------------------------------- */
+
+.boton {
+    display: inline-block;
+    padding: 14px 34px;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform var(--transicion), box-shadow var(--transicion),
+                background-color var(--transicion), color var(--transicion);
+}
+
+.boton-principal {
+    background-color: var(--rojo);
+    color: var(--blanco);
+    box-shadow: var(--sombra);
+}
+
+.boton-principal:hover {
+    background-color: var(--rojo-oscuro);
+    transform: translateY(-3px);
+    box-shadow: var(--sombra-alta);
+}
+
+.boton-secundario {
+    background-color: transparent;
+    border-color: var(--blanco);
+    color: var(--blanco);
+}
+
+.boton-secundario:hover {
+    background-color: var(--blanco);
+    color: var(--rojo-oscuro);
+    transform: translateY(-3px);
+}
+
+.hero-botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 34px;
+}
+
+/* --------------------------------------------------------------------------
+   8. Filtros de la carta
+   -------------------------------------------------------------------------- */
+
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.filtro {
+    padding: 9px 22px;
+    border: 1px solid var(--arena);
+    border-radius: 50px;
+    background-color: var(--blanco);
+    font-family: inherit;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--gris);
+    cursor: pointer;
+    transition: background-color var(--transicion), border-color var(--transicion),
+                color var(--transicion);
+}
+
+.filtro:hover {
+    border-color: var(--dorado);
+    color: var(--carbon);
+}
+
+.filtro.activo {
+    background-color: var(--rojo);
+    border-color: var(--rojo);
+    color: var(--blanco);
+}
+
+/* --------------------------------------------------------------------------
+   9. Tarjetas de platos
+   -------------------------------------------------------------------------- */
+
+.platos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.plato {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--blanco);
+    border-radius: var(--radio);
+    overflow: hidden;
+    box-shadow: var(--sombra);
+    transition: transform var(--transicion), box-shadow var(--transicion);
+}
+
+.plato:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--sombra-alta);
+}
+
+/* Franja de color en la parte superior de cada tarjeta */
+.plato::before {
+    content: "";
+    display: block;
+    height: 6px;
+    background: linear-gradient(90deg, var(--rojo), var(--aji), var(--dorado));
+}
+
+.plato-contenido {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 26px;
+}
+
+.plato h3 {
+    margin-bottom: 8px;
+}
+
+.plato p {
+    flex: 1;
+    font-size: 0.95rem;
+    color: var(--gris);
+}
+
+.plato-pie {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--arena);
+}
+
+.precio {
+    font-family: var(--fuente-titulo);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--rojo);
+}
+
+.etiqueta {
+    padding: 4px 12px;
+    border-radius: 50px;
+    background-color: var(--arena);
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--gris);
+}
+
+.etiqueta-picante {
+    background-color: rgba(193, 18, 31, 0.12);
+    color: var(--rojo);
+}
+
+/* --------------------------------------------------------------------------
+   10. Pie de pagina
+   -------------------------------------------------------------------------- */
+
+footer {
+    margin-top: 60px;
+    padding: 70px 20px 30px;
+    background-color: var(--carbon);
+    color: var(--arena);
+    /* Las columnas de informacion se reparten el ancho disponible */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    align-items: start;
+}
+
+footer h3 {
+    position: relative;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    font-size: 1.05rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--blanco);
+}
+
+footer h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 38px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--rojo), var(--aji));
+}
+
+footer p,
+footer li {
+    font-size: 0.92rem;
+    color: rgba(239, 230, 217, 0.75);
+}
+
+footer li {
+    margin-bottom: 8px;
+}
+
+footer a {
+    transition: color var(--transicion), padding-left var(--transicion);
+}
+
+footer li a:hover,
+footer div > a:hover {
+    color: var(--aji);
+    padding-left: 6px;
+}
+
+/* Redes sociales: enlaces en linea, sin desplazamiento al pasar el raton */
+footer div:last-of-type a {
+    display: inline-block;
+    margin: 0 12px 8px 0;
+    font-size: 0.9rem;
+    color: rgba(239, 230, 217, 0.85);
+}
+
+footer div:last-of-type a:hover {
+    color: var(--aji);
+    padding-left: 0;
+}
+
+/* Barra legal: ocupa todo el ancho de la rejilla */
+footer > p {
+    grid-column: 1 / -1;
+    padding-top: 24px;
+    border-top: 1px solid rgba(239, 230, 217, 0.15);
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+/* La segunda linea legal no repite el borde superior */
+footer > p ~ p {
+    padding-top: 0;
+    border-top: none;
+}
+
+footer > p a:hover {
+    color: var(--aji);
+}
+
+/* --------------------------------------------------------------------------
+   11. Animacion de aparicion (la activa el JS al hacer scroll)
+   -------------------------------------------------------------------------- */
+
+.aparece {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.aparece.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --------------------------------------------------------------------------
+   12. Encabezado reducido para las paginas internas
+   -------------------------------------------------------------------------- */
+
+header.hero-pequeno {
+    min-height: 42vh;
+    padding: 90px 20px 60px;
+}
+
+header.hero-pequeno h1 {
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+}
+
+/* --------------------------------------------------------------------------
+   13. Rejillas de contenido
+   -------------------------------------------------------------------------- */
+
+/* Bloques de igual ancho que se apilan solos en movil */
+.columnas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+/* Formulario a la izquierda, informacion de apoyo a la derecha */
+.dos-columnas {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.tarjeta {
+    padding: 28px;
+    background-color: var(--blanco);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+}
+
+.tarjeta + .tarjeta {
+    margin-top: 24px;
+}
+
+.tarjeta h3 {
+    margin-bottom: 10px;
+}
+
+.tarjeta p {
+    color: var(--gris);
+    font-size: 0.95rem;
+}
+
+.tarjeta a {
+    color: var(--rojo);
+    font-weight: 600;
+}
+
+.tarjeta a:hover {
+    text-decoration: underline;
+}
+
+/* Cargo de cada persona del equipo */
+.cargo {
+    margin-bottom: 10px;
+    font-size: 0.8rem !important;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--dorado) !important;
+}
+
+/* Lista con vinetas propias */
+.lista li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: var(--gris);
+}
+
+.lista li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 11px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--aji);
+}
+
+/* Bloque de texto largo, mas comodo de leer */
+.texto {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.texto p {
+    margin-bottom: 20px;
+}
+
+.centrado {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.nota {
+    max-width: 700px;
+    margin: 40px auto 0;
+    padding: 18px 24px;
+    border-left: 4px solid var(--aji);
+    background-color: var(--arena);
+    border-radius: 0 var(--radio) var(--radio) 0;
+    font-size: 0.92rem;
+    color: var(--gris);
+}
+
+/* Cita destacada */
+.cita {
+    max-width: 760px;
+    margin: 50px auto 0;
+    padding: 30px 34px;
+    border-left: 4px solid var(--rojo);
+    background-color: var(--blanco);
+    border-radius: 0 var(--radio) var(--radio) 0;
+    box-shadow: var(--sombra);
+    font-family: var(--fuente-titulo);
+    font-size: 1.3rem;
+    line-height: 1.5;
+}
+
+.cita span {
+    display: block;
+    margin-top: 14px;
+    font-family: var(--fuente-texto);
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--gris);
+}
+
+/* Franja de llamado a la accion */
+.franja {
+    padding: 60px 30px;
+    border-radius: var(--radio);
+    text-align: center;
+    color: var(--blanco);
+    background:
+        linear-gradient(rgba(30, 26, 23, 0.45), rgba(122, 11, 20, 0.75)),
+        var(--rojo);
+}
+
+.franja p {
+    margin: 12px 0 28px;
+    color: var(--arena);
+}
+
+/* --------------------------------------------------------------------------
+   14. Formularios
+   -------------------------------------------------------------------------- */
+
+.formulario {
+    padding: 34px;
+    background-color: var(--blanco);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+}
+
+.formulario-centrado {
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.campo {
+    margin-bottom: 20px;
+}
+
+/* Dos campos cortos en la misma fila */
+.campo-doble {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--gris);
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1px solid var(--arena);
+    border-radius: var(--radio);
+    background-color: var(--crema);
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--carbon);
+    transition: border-color var(--transicion), box-shadow var(--transicion);
+}
+
+.campo textarea {
+    resize: vertical;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    outline: none;
+    border-color: var(--rojo);
+    box-shadow: 0 0 0 3px rgba(193, 18, 31, 0.12);
+}
+
+/* Marca en rojo los campos obligatorios que quedaron mal */
+.campo input.error,
+.campo select.error,
+.campo textarea.error {
+    border-color: var(--rojo);
+    background-color: rgba(193, 18, 31, 0.04);
+}
+
+.formulario button {
+    width: 100%;
+    border: none;
+}
+
+/* Aviso que aparece al enviar el formulario */
+.mensaje-form {
+    margin-top: 20px;
+    padding: 14px 18px;
+    border-radius: var(--radio);
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.mensaje-form.exito {
+    background-color: rgba(46, 125, 50, 0.12);
+    color: #2E7D32;
+}
+
+.mensaje-form.aviso {
+    background-color: rgba(193, 18, 31, 0.10);
+    color: var(--rojo);
+}
+
+/* --------------------------------------------------------------------------
+   15. Imagenes
+   -------------------------------------------------------------------------- */
+
+/* Ilustracion de cada plato dentro de su tarjeta */
+.plato-foto {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background-color: var(--arena);
+    transition: transform var(--transicion);
+}
+
+/* Un acercamiento suave al pasar el raton por la tarjeta */
+.plato {
+    /* Evita que la imagen ampliada se salga de las esquinas redondeadas */
+    isolation: isolate;
+}
+
+.plato:hover .plato-foto {
+    transform: scale(1.05);
+}
+
+/* Imagen con pie de foto */
+.figura {
+    max-width: 760px;
+    margin: 50px auto 0;
+    overflow: hidden;
+    border-radius: var(--radio);
+    background-color: var(--blanco);
+    box-shadow: var(--sombra);
+}
+
+.figura img {
+    width: 100%;
+    display: block;
+}
+
+.figura figcaption {
+    padding: 16px 22px;
+    font-size: 0.88rem;
+    color: var(--gris);
+    text-align: center;
+}
+
+/* El plano de ubicacion puede ser mas ancho que una foto */
+.mapa {
+    max-width: 900px;
+}
+
+/* Retratos redondos del equipo */
+.retrato {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    border: 3px solid var(--arena);
+    object-fit: cover;
+}
+
+/* Las tarjetas con retrato se leen mejor centradas */
+.tarjeta:has(.retrato) {
+    text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   16. Diseno responsivo
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+    header {
+        min-height: 65vh;
+        padding: 90px 20px 70px;
+    }
+
+    header p {
+        font-size: 0.95rem;
+        letter-spacing: 2px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 12px 20px;
+    }
+
+    .boton-menu {
+        display: block;
+        align-self: flex-end;
+    }
+
+    /* Los enlaces se ocultan hasta pulsar el boton hamburguesa */
+    nav a {
+        display: none;
+        padding: 12px 8px;
+        border-bottom: 1px solid var(--arena);
+        text-align: center;
+    }
+
+    nav.abierto a {
+        display: block;
+    }
+
+    nav a::after {
+        display: none;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    header.hero-pequeno {
+        min-height: 32vh;
+        padding: 70px 20px 50px;
+    }
+
+    /* El formulario y su informacion de apoyo pasan a una sola columna */
+    .dos-columnas {
+        grid-template-columns: 1fr;
+    }
+
+    .campo-doble {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .formulario {
+        padding: 24px;
+    }
+
+    .cita {
+        font-size: 1.1rem;
+        padding: 24px;
+    }
+
+    .franja {
+        padding: 45px 24px;
+    }
+
+    .figura {
+        margin-top: 34px;
+    }
+
+    .retrato {
+        width: 92px;
+        height: 92px;
+    }
+
+    footer {
+        text-align: center;
+    }
+
+    footer h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* Respeta la preferencia del sistema de reducir animaciones */
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+
+    .aparece {
+        opacity: 1;
+        transform: none;
+    }
+}

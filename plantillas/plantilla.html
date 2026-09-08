@@ -1,30 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Belle Cuisine</title>
+    <meta name="description" content="Cocina peruana de autor en Santiago de Chile.">
+
+    <!-- Cambia el titulo en cada pagina -->
+    <title>Sabor de Barranco</title>
+    <link rel="icon" type="image/svg+xml" href="../img/icono.svg">
+
+    <!-- Tipografias del sitio -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="../css/estilos.css">
 </head>
 <body>
 
+    <!-- ==================================================================
+         ESQUELETO BASE DEL SITIO
+         Copia este archivo dentro de Pages/ para crear una pagina nueva.
+         Solo hay que cambiar el <title> y el contenido de <main>.
+
+         Ojo con las rutas: desde Pages/ los enlaces a css, js e img
+         empiezan con ../ igual que aqui.
+         ================================================================== -->
+
     <!-- Encabezado de pagina con un titulo y subtitulo -->
 
-<header>
+<header class="hero-pequeno">
 
-    <h1>La Belle Cuisine</h1>
-    <p>Experiencia gastronómica inolvidable</p>
+    <h1>Título de la página</h1>
+    <p>Subtítulo breve</p>
 
 </header>
-    <!-- Barra de navegacion del sitio-->
+
+    <!-- Barra de navegacion del sitio -->
 
 <nav>
+    <button class="boton-menu" aria-label="Abrir menú" aria-expanded="false">☰</button>
+
     <a href="../index.html">Inicio</a>
-    <a href="Pages/menu.html">Menú</a>
-    <a href="reservaciones.html">Reservaciones</a>
+    <a href="menu.html">Carta</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="reservaciones.html">Reservas</a>
     <a href="contacto.html">Contacto</a>
 
 </nav>
+
+    <!-- Contenido propio de cada pagina -->
+
+<main>
+
+    <section>
+
+        <h2 class="titulo-seccion aparece">Título de sección</h2>
+        <p class="subtitulo-seccion aparece">
+            Texto de apoyo que explica de qué trata la sección.
+        </p>
+
+        <!-- Aqui va el contenido: tarjetas, texto, formularios...
+
+             Para usar una ilustracion de la carpeta img/:
+             <img class="plato-foto" src="../img/platos/ceviche.svg"
+                  alt="Describe la imagen" loading="lazy">
+        -->
+
+    </section>
+
+</main>
+
+    <!-- Pie de pagina con informacion de contacto y enlaces del sitio -->
+
+<footer>
+
+    <div>
+        <h3>Quienes Somos</h3>
+        <p>Nacimos en 2010 en una casona de Providencia con una idea simple:
+           traer a Santiago la cocina peruana de siempre, con pescado fresco
+           y productos de pequeños productores.</p>
+        <a href="nosotros.html">Conoce nuestra historia</a>
+    </div>
+
+    <div>
+        <h3>Enlaces</h3>
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="menu.html">Carta</a></li>
+            <li><a href="nosotros.html">Quiénes Somos</a></li>
+            <li><a href="reservaciones.html">Reservaciones</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </div>
+
+    <div>
+        <h3>Contacto</h3>
+        <p>Av. Italia 1234<br>
+           Providencia, Santiago</p>
+        <p>Teléfono: <a href="tel:+56223456789">+56 2 2345 6789</a></p>
+        <p>Correo: <a href="mailto:info@sabordebarranco.cl">info@sabordebarranco.cl</a></p>
+    </div>
+
+    <div>
+        <h3>Horario</h3>
+        <ul>
+            <li>Lunes a Jueves: 12:00 - 22:00</li>
+            <li>Viernes y Sábado: 12:00 - 23:30</li>
+            <li>Domingo: 12:00 - 17:00</li>
+        </ul>
+    </div>
+
+    <div>
+        <h3>Síguenos</h3>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">X</a>
+        <a href="#">TripAdvisor</a>
+    </div>
+
+    <!-- Aviso legal y derechos de autor -->
+    <p>&copy; <span id="anio">2026</span> Sabor de Barranco. Todos los derechos reservados.</p>
+    <p>
+        <a href="#">Política de Privacidad</a> |
+        <a href="#">Términos y Condiciones</a>
+    </p>
+
+</footer>
+
+<script src="../js/script.js"></script>
 
 </body>
 </html>
